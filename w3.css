@@ -105,8 +105,7 @@ body{
 	color:#fff;
 	display:block;
 }
-.login-form .group .input,
-.login-form .group .button{
+.login-form .group .input{
 	border:none;
 	padding:15px 20px;
 	border-radius:25px;
@@ -121,8 +120,19 @@ body{
 	font-size:12px;
 }
 .login-form .group .button{
-	background:#1161ee;
+    background:#1161ee;
+    border:none;
+	padding:15px 20px;
+    border-radius:25px;
+    transition-duration: 0.6s;
 }
+
+.login-form .group .button:hover{
+    background-color: #0e51c8;
+    /* opacity: 60%; */
+}
+
+
 .login-form .group label .icon{
 	width:15px;
 	height:15px;
