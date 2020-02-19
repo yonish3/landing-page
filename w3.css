@@ -4,7 +4,6 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
 }
 
 .header{
@@ -14,7 +13,7 @@
 	width: 100%;
 	text-align: left;
 	font: bold 16px sans-serif;
-	padding: 5px 20px;
+	padding: 20px 20px;
 }
 
 body{
@@ -109,12 +108,9 @@ body{
 	border:none;
 	padding:15px 20px;
 	border-radius:25px;
-	background:rgba(255,255,255,.1);
+    background:rgba(255,255,255,.1);
 }
-.login-form .group input[data-type="password"]{
-	text-security:circle;
-	-webkit-text-security:circle;
-}
+
 .login-form .group .label{
 	color:#aaa;
 	font-size:12px;
@@ -189,16 +185,12 @@ body{
 	text-align:center;
 }
 
-
-
-/* newWWWWWWWWWWWWWWWWWWWWWWWWWWw */
-
-/* @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700); */
-
-/* * {
-  font-family: Open Sans;
+/* #value1{
+    border-color: red;
+    border-style: ridge;
 } */
 
+/* Footer */
 
 .footer-distributed{
 	background: #666;
@@ -207,7 +199,7 @@ body{
 	width: 100%;
 	text-align: left;
 	font: bold 16px sans-serif;
-	padding: 55px 50px;
+	padding: 35px 50px;
 }
 
 .footer-distributed .footer-left,
@@ -240,7 +232,9 @@ body{
 .footer-distributed .footer-links{
 	color:  #ffffff;
 	margin: 20px 0 12px;
-	padding: 0;
+    padding: 0;
+    text-align: center;
+
 }
 
 .footer-distributed .footer-links a{
@@ -285,9 +279,10 @@ body{
 .footer-distributed .footer-center p{
 	display: inline-block;
 	color: #ffffff;
-  font-weight:400;
+    font-weight:400;
 	vertical-align: middle;
-	margin:0;
+    margin:0;
+
 }
 
 .footer-distributed .footer-center p span{

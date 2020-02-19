@@ -8,7 +8,6 @@
     <title>Marketing Automation Specialist</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
 </head>
 
 <body>
@@ -22,6 +21,7 @@
 <!-- Page content -->
 
 <!-- form -->
+<form id="myForm" action="JavaScript:redirect()">
 <div class="login-wrap">
 	<div class="login-html">
 		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
@@ -29,36 +29,27 @@
 		<div class="login-form">
 			<div class="sign-in-htm">
 				<div class="group">
-					<label for="user" class="label">Username</label>
-					<input id="user" type="text" class="input">
+					<label for="value1" class="label">* Value 1</label>
+                    <input id="value1" type="text" class="input">
+                    <span id="value1Error"></span>
 				</div>
 				<div class="group">
-					<label for="pass" class="label">Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
+					<label for="value2" class="label">* Value 2</label>
+                    <input id="value2" type="text" class="input">
+                    <span id="value2Error"></span>
 				</div>
 				<div class="group">
-					<label for="pass" class="label">Repeat Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
+					<label for="value3" class="label">Value 3</label>
+					<input id="value3" type="text" class="input">
 				</div>
 				<div class="group">
-					<label for="pass" class="label">Email Address</label>
-					<input id="pass" type="text" class="input">
+					<label for="value4" class="label">Value 4</label>
+					<input id="value4" type="text" class="input">
 				</div>
-				<!-- <div class="group">
-					<label for="pass" class="label">Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
-				</div> -->
-				<!-- <div class="group">
-					<input id="check" type="checkbox" class="check" checked>
-					<label for="check"><span class="icon"></span> Keep me Signed in</label>
-				</div> -->
 				<div class="group">
-                    <input type="submit" class="button" value="Sign In" onclick="redirect()">
+                    <input type="submit" class="button" value="Sign In">
 				</div>
 				<div class="hr"></div>
-				<!-- <div class="foot-lnk">
-					<a href="#forgot">Forgot Password?</a>
-				</div> -->
 			</div>
 			<div class="sign-up-htm">
 				<div class="group">
@@ -67,31 +58,13 @@
                         <p>I'm here only because flipping is cool (:</p>
                         <p>Please flip me back</p>
                     </div>
-					<!-- <input id="user" type="text" class="input"> -->
 				</div>
-				<!-- <div class="group">
-					<label for="pass" class="label">Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Repeat Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Email Address</label>
-					<input id="pass" type="text" class="input">
-				</div>
-				<div class="group">
-					<input type="submit" class="button" value="Sign Up">
-				</div> -->
 				<div class="hr"></div>
-				<!-- <div class="foot-lnk">
-					<label for="tab-1">Already Member?</a>
-				</div> -->
 			</div>
 		</div>
 	</div>
 </div>
+</form>
 
 
 </body>
@@ -129,18 +102,34 @@
 					<span>About the company</span>
 					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
 				</p>
-				<div class="footer-icons">
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-					<a href="#"><i class="fa fa-linkedin"></i></a>
-					<a href="#"><i class="fa fa-github"></i></a>
-				</div>
 			</div>
   </footer>
 
   <script>
       const redirect = function(){
-        window.location.href = "./TYP_IA_A.html";
-      }
+        let redirectFlag = true
+        let formInputs = document.getElementById("myForm").elements
+ 
+        for (let i = 2; i < 4; i++) {
+            let k = i-1
+
+            formInputs[i].style.borderStyle = "";
+            document.querySelector(`#value${k}Error`).textContent = "";
+            
+            if (!formInputs[i].value){
+                document.querySelector(`#${formInputs[i].id}`).style.borderStyle = "ridge";
+                document.querySelector(`#${formInputs[i].id}`).style.borderColor = "red";
+                document.querySelector(`#${formInputs[i].id}`).style.borderColor = "red";
+                document.querySelector(`#value${k}Error`).textContent = 'Mandatory field';
+                document.querySelector(`#value${k}Error`).style.color = "red";
+                document.querySelector(`#value${k}Error`).style.fontWeight = "normal";
+                redirectFlag = false;
+            }
+        }
+
+            if(redirectFlag) window.location.href = "./TYP_IA_A.html";
+        }
+
+      
   </script>
 </html>
